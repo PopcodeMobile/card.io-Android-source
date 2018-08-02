@@ -74,15 +74,7 @@ class CardNumberValidator implements Validator {
 
     @Override
     public boolean isValid() {
-        if (!this.hasFullLength()) {
-            return false;
-        }
-
-        if (!CreditCardNumber.passesLuhnChecksum(numberString)) {
-            return false;
-        }
-
-        return true;
+        return this.hasFullLength();
     }
 
     @Override
